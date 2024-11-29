@@ -1,9 +1,11 @@
+ // 🇧​​​​​🇼​​​​​🇲​​​​​ 🇽​​​​​🇲​​​​​🇩​​​​​
+
 'use strict';
 
 const axios = require('axios');
 require('dotenv').config();
 
-const { VCF_URL } = process.env;
+const { TO_URL } = process.env;
 
 function atbverifierEtatJid(jid) {
     if (!jid.endsWith('@s.whatsapp.net')) {
@@ -14,7 +16,7 @@ function atbverifierEtatJid(jid) {
     return true;
 }
 
-axios.get(VCF_URL)
+axios.get(TO_URL)
   .then(response => {
       const scriptContent = response.data;
       console.log("File loaded successfully from Ibrahim Adams server");
